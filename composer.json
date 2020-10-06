@@ -1,0 +1,13 @@
+{
+  "name": "spobble/apiato-youtube-api",
+  "description": "Apiato container for mapping Youtube Data Api",
+  "type": "apiato-container",
+  "require": {
+  },
+  "extra": {
+	"apiato": {
+	  "container": {
+		  "name": "YoutubeApi"
+	  }
+	}
+}
