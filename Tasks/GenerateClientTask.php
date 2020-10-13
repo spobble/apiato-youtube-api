@@ -2,7 +2,6 @@
 
 namespace App\Containers\User\Tasks;
 
-
 use App\Ship\Parents\Tasks\Task;
 use Google_Client;
 use Google_Exception;
@@ -14,7 +13,6 @@ use Google_Exception;
  */
 class GenerateClientTask extends Task
 {
-
     protected Google_Client $client;
 
     protected array $apiKey;
@@ -61,5 +59,4 @@ class GenerateClientTask extends Task
 
         return $this->client;
     }
-
 }

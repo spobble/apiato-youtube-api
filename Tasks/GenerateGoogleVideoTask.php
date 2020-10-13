@@ -2,7 +2,6 @@
 
 namespace App\Containers\User\Tasks;
 
-
 use App\Ship\Parents\Tasks\Task;
 use Google_Client;
 use Google_Exception;
@@ -16,7 +15,6 @@ use Google_Service_YouTube_VideoSnippet;
  */
 class GenerateGoogleVideoTask extends Task
 {
-
     protected Google_Service_YouTube_Video $video;
     protected Google_Service_YouTube_VideoSnippet $snippet;
 
@@ -30,12 +28,9 @@ class GenerateGoogleVideoTask extends Task
 
     public function run(array $videoData)
     {
-
         $this->snippet->setTitle($videoData['title']);
         $this->video->setSnippet($this->snippet);
 
         return $this->video;
-
-}
-
+    }
 }

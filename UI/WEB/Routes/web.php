@@ -9,4 +9,3 @@ $router->any('/youtube/callback', [
     'as' => 'yt.index',
     'uses'  => 'Controller@callback',
 ]);
-

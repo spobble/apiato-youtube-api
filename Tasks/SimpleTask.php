@@ -2,7 +2,6 @@
 
 namespace App\Containers\User\Tasks;
 
-
 use App\Ship\Parents\Tasks\Task;
 
 /**
@@ -12,18 +11,14 @@ use App\Ship\Parents\Tasks\Task;
  */
 class SimpleTask extends Task
 {
-
     protected $repository;
 
     public function __construct()
     {
-
     }
 
 
     public function run()
     {
-
     }
-
 }

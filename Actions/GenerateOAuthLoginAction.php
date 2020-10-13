@@ -12,7 +12,6 @@ use Apiato\Core\Foundation\Facades\Apiato;
  */
 class GenerateOAuthLoginAction extends Action
 {
-
     public function run()
     {
         $refreshToken = "";
@@ -20,6 +19,5 @@ class GenerateOAuthLoginAction extends Action
         $client = Apiato::call("YoutubeApi@GenerateClientTask");
 
         return $client->createAuthUrl();
-
     }
 }
