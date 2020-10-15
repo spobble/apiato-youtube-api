@@ -2,32 +2,26 @@
 
 namespace App\Containers\YoutubeApi\UI\WEB\Controllers;
 
+use Apiato\Core\Foundation\Facades\Apiato;
 use App\Ship\Parents\Controllers\WebController;
-use Google_Client;
+use App\Ship\Transporters\DataTransporter;
 
+use App\Containers\Club\UI\WEB\Requests\GetRefreshTokenRequest;
 
 class Controller extends WebController
 {
     public function index()
     {
-        $client = new Google_Client();
-        $client->setApplicationName('Vanda Spobble');
-        $client->setScopes([
-            'https://www.googleapis.com/auth/youtube.upload',
-        ]);
+        $link = Apiato::call('YoutubeApi@GenerateOAuthLoginAction');
 
-        try {
-            $client->setAuthConfig(base_path("vandakey.json"));
-        } catch (\Google_Exception $e) {
-            $message = "Auth config non riuscito";
-            return view('youtubeapi::index')->with('message',$message)->with('exception',$e->getMessage());
-        }
-        $client->setAccessType('offline');
-
-        $link = "<a class='btn btn-primary' href='{$client->createAuthUrl()}'>Login</a>";
-        return view('youtubeapi::index',[
-            'link' => $link
-        ]);
+        return redirect($link);
     }
 
+    public function callback()
+    {
+        if(isset($_REQUEST['code']))
+        $result = Apiato::call('YoutubeApi@UploadVideoAction',[$_REQUEST['code']]);
+
+        print_r($result); die;
+    }
 }
