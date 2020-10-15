@@ -1,13 +1,18 @@
 {
-  "name": "spobble/apiato-youtube-api",
-  "description": "Apiato container for mapping Youtube Data Api",
-  "license": "MIT",
   "authors": [
     {
       "name": "Andrea Civita",
       "email": "andreacivita994@gmail.com"
     }
   ],
+  "description": "Apiato container for mapping Youtube Data Api",
+  "extra": {
+    "apiato": {
+      "container": {
+        "name": "YoutubeApi"
+      }
+    }
+  },
   "keywords": [
     "Apiato",
     "Youtube Api",
@@ -15,15 +20,13 @@
     "Youtube Upload Video",
     "Apiato Youtube Upload Video"
   ],
-  "type": "apiato-container",
+  "license": "MIT",
+  "name": "spobble/apiato-youtube-api",
   "require": {
     "google/apiclient": "2.7"
   },
-  "extra": {
-    "apiato": {
-      "container": {
-        "name": "YoutubeApi"
-      }
-    }
-  }
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.16"
+  },
+  "type": "apiato-container"
 }
